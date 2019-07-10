@@ -6,6 +6,7 @@ class Song
 
 def self.all
     @@all
+    #@@artists
 end
 
 def save
@@ -25,9 +26,10 @@ def self.new_by_name(name)#  created a new song then given a name song.name "Bla
 end
 
 def self.create_by_name(name) #instanciates then provides a name
-    song = self.new
+    song = self.create #calls 
     song.name =name
-    @@all << song
+
+    #self.class.all << song
     song
 end
 
