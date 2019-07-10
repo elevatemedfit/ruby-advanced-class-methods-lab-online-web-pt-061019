@@ -26,7 +26,7 @@ def self.new_by_name(name)#  created a new song then given a name song.name "Bla
 end
 
 def self.create_by_name(name) #instanciates then provides a name
-    song = self.create #calls 
+    song = self.create #calls previous method .create
     song.name =name
 
     #self.class.all << song
@@ -34,16 +34,17 @@ def self.create_by_name(name) #instanciates then provides a name
 end
 
 def self.find_by_name(name)
-    @@all.find{|song| song.name == name}
+    self.class.all.find{|song| song.name == name}
 end
 
 def self.find_or_create_by_name(name)
-    song = self.find_by_name(name)
-    if song then
-        return song
-    else
-        self.create_by_name(name)
-    end
+
+    song = self.find_by_name(name) || self.create_by_name(name)
+    #if song then
+    #     return song
+    # else
+    #     self.create_by_name(name)
+    # end
   end
 
 def self.alphabetical
