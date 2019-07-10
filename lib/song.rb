@@ -40,16 +40,11 @@ end
 def self.find_or_create_by_name(name)
 
     self.find_by_name(name) || self.create_by_name(name)
-    #if song then
-    #     return song
-    # else
-    #     self.create_by_name(name)
-    # end
 
   end
 
 def self.alphabetical
-  sorted = @@all.sort_by{|song| song.name}
+  sorted = self.all.sort_by{|song| song.name}
   sorted
 end
 
