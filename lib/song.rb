@@ -45,6 +45,7 @@ def self.find_or_create_by_name(name)
     # else
     #     self.create_by_name(name)
     # end
+    song
   end
 
 def self.alphabetical
